@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bellarmine Physics Club</title>
+<meta name="description" content="Bellarmine College Preparatory Physics Club — problem sets, meetings, and competition prep.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#top">
+    <svg class="brand-mark" viewBox="0 0 60 60" aria-hidden="true">
+      <circle cx="30" cy="30" r="28" fill="#0B2D5C"/>
+      <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#6CACE4" stroke-width="1.5" transform="rotate(0 30 30)"/>
+      <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#6CACE4" stroke-width="1.5" transform="rotate(60 30 30)"/>
+      <ellipse cx="30" cy="30" rx="22" ry="8" fill="none" stroke="#6CACE4" stroke-width="1.5" transform="rotate(120 30 30)"/>
+      <circle cx="30" cy="30" r="2.5" fill="#FFFFFF"/>
+    </svg>
+    <span>Bellarmine Physics Club</span>
+  </a>
+  <nav class="nav">
+    <a href="#about">About</a>
+    <a href="#resources">Resources</a>
+    <a href="#events">Events</a>
+    <a href="#officers">Officers</a>
+    <a href="#join">Join</a>
+  </nav>
+  <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">San Jose, CA · Bellarmine College Prep</p>
+      <h1>We solve the problems<br>that don't have answers<br>in the back of the book.</h1>
+      <p class="hero-sub">A student-run club for anyone who wants to think harder about mechanics, E&amp;M, and the occasional relativity puzzle — from first-year curious to USAPhO-bound.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#join">Join the club</a>
+        <a class="btn btn-ghost" href="#resources">Browse resources</a>
+      </div>
+      <p class="hero-meta"><span class="dot" aria-hidden="true"></span> Meets Thursdays, lunch, Room 214</p>
+    </div>
+    <div class="hero-orbit" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="4" fill="#0072CE"/>
+        <ellipse class="orbit-ring r1" cx="200" cy="200" rx="150" ry="60"/>
+        <ellipse class="orbit-ring r2" cx="200" cy="200" rx="150" ry="60" transform="rotate(60 200 200)"/>
+        <ellipse class="orbit-ring r3" cx="200" cy="200" rx="150" ry="60" transform="rotate(120 200 200)"/>
+        <circle class="electron e1" r="6"/>
+        <circle class="electron e2" r="6"/>
+        <circle class="electron e3" r="6"/>
+      </svg>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <p class="eyebrow">About</p>
+    <div class="about-grid">
+      <h2>Physics is a lot more fun once it stops being homework.</h2>
+      <p>We're a group of students who meet weekly to work through problems you won't find on a normal problem set — the kind that show up on the F=ma exam, USAPhO, and IPhO, and the kind that just make you go "wait, why does that work?" No prior competition experience required, just curiosity and a willingness to get a problem wrong a few times before you get it right.</p>
+    </div>
+  </section>
+
+  <section id="resources" class="resources">
+    <p class="eyebrow">Resources</p>
+    <h2>Everything we've put together, in one place</h2>
+    <div class="card-grid">
+      <a class="card" href="#">
+        <span class="card-tag">Handouts</span>
+        <h3>Mechanics I&ndash;IV</h3>
+        <p>Core problem-solving techniques with worked examples, building from kinematics to rigid body motion.</p>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Handouts</span>
+        <h3>Electricity &amp; magnetism</h3>
+        <p>Circuits, fields, and induction — the material that shows up hardest on USAPhO.</p>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Practice</span>
+        <h3>Past F=ma &amp; USAPhO sets</h3>
+        <p>Real exams from past years with full solutions, organized by topic and difficulty.</p>
+      </a>
+      <a class="card" href="#">
+        <span class="card-tag">Guide</span>
+        <h3>Getting started</h3>
+        <p>New to competition physics? Start here for a suggested order and pace.</p>
+      </a>
+    </div>
+  </section>
+
+  <section id="events" class="events">
+    <p class="eyebrow">Events</p>
+    <h2>What's coming up</h2>
+    <ul class="event-list">
+      <li>
+        <span class="event-date">Sep</span>
+        <div>
+          <h3>First meeting &amp; problem set kickoff</h3>
+          <p>Intros, club overview, and this year's first problem set.</p>
+        </div>
+      </li>
+      <li>
+        <span class="event-date">Nov</span>
+        <div>
+          <h3>F=ma exam</h3>
+          <p>Qualifying exam for the US Physics Team selection process.</p>
+        </div>
+      </li>
+      <li>
+        <span class="event-date">Jan</span>
+        <div>
+          <h3>USAPhO</h3>
+          <p>For students who advance past F=ma.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="officers" class="officers">
+    <p class="eyebrow">Officers</p>
+    <h2>Who's running things</h2>
+    <div class="card-grid officer-grid">
+      <div class="officer-card">
+        <div class="officer-avatar" aria-hidden="true"></div>
+        <h3>Club leader</h3>
+        <p>Sets the curriculum, runs meetings, and coaches for F=ma / USAPhO prep.</p>
+      </div>
+      <div class="officer-card">
+        <div class="officer-avatar" aria-hidden="true"></div>
+        <h3>Vice president</h3>
+        <p>Handles logistics, exam registration, and outreach to underclassmen.</p>
+      </div>
+      <div class="officer-card">
+        <div class="officer-avatar" aria-hidden="true"></div>
+        <h3>Webmaster</h3>
+        <p>Keeps this site and the resource library up to date.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join" class="join">
+    <p class="eyebrow">Join</p>
+    <h2>No prerequisites. Just show up.</h2>
+    <p class="join-sub">We meet every Thursday during lunch in Room 214. Bring a pencil and a willingness to be stuck for a while — that's the whole job description.</p>
+    <a class="btn btn-primary" href="mailto:physicsclub@bcp.org">Email us to get on the list</a>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Bellarmine Physics Club · Bellarmine College Preparatory, San Jose, CA</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
