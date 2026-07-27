@@ -1,0 +1,24 @@
+title: Bellarmine Physics Club
+description: >-
+  A student-run club for competition and curiosity-driven physics
+  at Bellarmine College Preparatory.
+baseurl: ""
+url: ""
+
+collections:
+  resources:
+    output: true
+    sort_by: title
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+  - scope:
+      path: ""
+      type: "resources"
+    values:
+      layout: "resource"
+
+markdown: kramdown
