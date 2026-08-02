@@ -30,18 +30,21 @@ title: Home
       <circle cx="220" cy="234" r="14" fill="#0072CE"/>
 
       <g transform="translate(100,70)">
-        <g class="pendulum-left">
+        <g id="pendulumLeft" class="pendulum-ball">
           <line x1="0" y1="0" x2="0" y2="150" stroke="#6CACE4" stroke-width="2"/>
           <circle cx="0" cy="164" r="14" fill="#0B2D5C"/>
+          <circle cx="0" cy="164" r="26" fill="transparent" pointer-events="all"/>
         </g>
       </g>
       <g transform="translate(260,70)">
-        <g class="pendulum-right">
+        <g id="pendulumRight" class="pendulum-ball">
           <line x1="0" y1="0" x2="0" y2="150" stroke="#6CACE4" stroke-width="2"/>
           <circle cx="0" cy="164" r="14" fill="#0B2D5C"/>
+          <circle cx="0" cy="164" r="26" fill="transparent" pointer-events="all"/>
         </g>
       </g>
     </svg>
+    <p class="cradle-hint">Drag an outer ball</p>
   </div>
 </section>
 

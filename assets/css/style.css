@@ -138,25 +138,16 @@ a { color: var(--blue); }
 
 .hero-orbit svg { width: 100%; height: auto; }
 
-.pendulum-left { transform-origin: 0 0; animation: swingLeft 2.6s ease-in-out infinite; }
-.pendulum-right { transform-origin: 0 0; animation: swingRight 2.6s ease-in-out infinite; }
+.pendulum-ball { transform-origin: 0 0; }
+.pendulum-ball circle[pointer-events="all"] { cursor: grab; touch-action: none; }
+.pendulum-ball:active circle[pointer-events="all"] { cursor: grabbing; }
 
-@keyframes swingLeft {
-  0%   { transform: rotate(0deg); }
-  22%  { transform: rotate(30deg); }
-  50%  { transform: rotate(0deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@keyframes swingRight {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(0deg); }
-  78%  { transform: rotate(-30deg); }
-  100% { transform: rotate(0deg); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .pendulum-left, .pendulum-right { animation: none; }
+.cradle-hint {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+  margin: 0.25rem 0 0;
 }
 
 /* Sections */
