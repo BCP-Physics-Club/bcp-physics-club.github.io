@@ -142,14 +142,6 @@ a { color: var(--blue); }
 .pendulum-ball circle[pointer-events="all"] { cursor: grab; touch-action: none; }
 .pendulum-ball:active circle[pointer-events="all"] { cursor: grabbing; }
 
-.cradle-hint {
-  text-align: center;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--slate);
-  margin: 0.25rem 0 0;
-}
-
 /* Sections */
 section {
   max-width: 1200px;
