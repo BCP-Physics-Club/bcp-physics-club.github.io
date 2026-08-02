@@ -5,7 +5,8 @@ title: Resources
   <p class="eyebrow">Resources</p>
   <h2>Everything we've put together, in one place</h2>
   <div class="card-grid">
-    {% for item in site.resources %}
+    {% assign sorted_resources = site.resources | sort: "order" %}
+    {% for item in sorted_resources %}
     <a class="card" href="{{ item.url | relative_url }}">
       <span class="card-tag">{{ item.tag }}</span>
       <h3>{{ item.title }}</h3>
