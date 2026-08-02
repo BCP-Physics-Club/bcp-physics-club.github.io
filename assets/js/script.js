@@ -25,28 +25,34 @@ document.querySelectorAll('.nav a').forEach(link => {
     right: { el: rightEl, pivotX: 260, pivotY: 70, angle: 0, vel: 0, dragging: false }
   };
 
-  const GRAVITY = 3.2;       // tuned constant, not real-world units
-  const DAMPING = 0.994;     // per-frame velocity decay
-  const MAX_DRAG_DEG = 48;
+  const OMEGA_SQ = 15.4;         // rad/s^2 — gives roughly a 1.6s small-angle swing period
+  const DAMPING_PER_SEC = 0.8;   // fraction of velocity kept each second (gentle decay)
+  const MAX_DRAG_RAD = 48 * Math.PI / 180;
 
   // side 'left': positive angle swings the ball left (outward).
   // side 'right': positive angle swings the ball right, which requires
   // the opposite CSS rotation sign — same convention used elsewhere on this page.
   function render(side) {
     const s = state[side];
-    const cssAngle = side === 'left' ? s.angle : -s.angle;
+    const deg = s.angle * 180 / Math.PI;
+    const cssAngle = side === 'left' ? deg : -deg;
     s.el.style.transform = `rotate(${cssAngle}deg)`;
   }
 
-  function step() {
+  let lastTime = null;
+  function step(timestamp) {
+    if (lastTime === null) lastTime = timestamp;
+    let dt = (timestamp - lastTime) / 1000; // seconds since last frame
+    lastTime = timestamp;
+    dt = Math.min(dt, 1 / 30); // clamp huge jumps, e.g. after switching tabs
+
     ['left', 'right'].forEach((side) => {
       const s = state[side];
       if (!s.dragging) {
-        const rad = s.angle * Math.PI / 180;
-        s.vel += -GRAVITY * Math.sin(rad);
-        s.vel *= DAMPING;
         const prevAngle = s.angle;
-        s.angle += s.vel;
+        s.vel += -OMEGA_SQ * Math.sin(s.angle) * dt;
+        s.vel *= Math.pow(DAMPING_PER_SEC, dt);
+        s.angle += s.vel * dt;
 
         // Collision: ball swings back through the resting position (angle 0)
         // moving inward — it stops dead and the opposite ball gets the kick.
@@ -70,7 +76,7 @@ document.querySelectorAll('.nav a').forEach(link => {
     pt.x = clientX;
     pt.y = clientY;
     const loc = pt.matrixTransform(svg.getScreenCTM().inverse());
-    return Math.atan2(loc.x - pivotX, loc.y - pivotY) * 180 / Math.PI;
+    return Math.atan2(loc.x - pivotX, loc.y - pivotY); // radians
   }
 
   function setupDrag(side) {
@@ -86,7 +92,7 @@ document.querySelectorAll('.nav a').forEach(link => {
       if (!s.dragging) return;
       const raw = pointerAngle(e.clientX, e.clientY, s.pivotX, s.pivotY);
       const outward = side === 'left' ? -raw : raw;
-      s.angle = Math.max(0, Math.min(MAX_DRAG_DEG, outward));
+      s.angle = Math.max(0, Math.min(MAX_DRAG_RAD, outward));
       render(side);
     });
 
