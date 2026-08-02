@@ -138,8 +138,8 @@ a { color: var(--blue); }
 
 .hero-orbit svg { width: 100%; height: auto; }
 
-.pendulum-left { transform-origin: 120px 70px; animation: swingLeft 2.6s ease-in-out infinite; }
-.pendulum-right { transform-origin: 280px 70px; animation: swingRight 2.6s ease-in-out infinite; }
+.pendulum-left { transform-origin: 0 0; animation: swingLeft 2.6s ease-in-out infinite; }
+.pendulum-right { transform-origin: 0 0; animation: swingRight 2.6s ease-in-out infinite; }
 
 @keyframes swingLeft {
   0%   { transform: rotate(0deg); }
