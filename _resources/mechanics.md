@@ -1,6 +1,7 @@
 ---
-title: "Mechanics I–IV"
+title: "Mechanics"
 tag: Handouts
-description: Core problem-solving techniques with worked examples, building from kinematics to rigid body motion.
+order: 2
+description: Core problem-solving techniques with worked examples, from kinematics through rotational dynamics.
 ---
 Placeholder content for the Mechanics handout series. Replace this with the actual writeup, or link out to a PDF.

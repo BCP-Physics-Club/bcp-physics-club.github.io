@@ -75,7 +75,7 @@ a { color: var(--blue); }
   font-size: 1.05rem;
 }
 
-.brand-mark { width: 32px; height: 32px; }
+.brand-mark { width: 36px; height: 36px; object-fit: contain; }
 
 .nav { display: flex; gap: 1.75rem; }
 
@@ -138,16 +138,26 @@ a { color: var(--blue); }
 
 .hero-orbit svg { width: 100%; height: auto; }
 
-.orbit-ring { fill: none; stroke: var(--light-blue); stroke-width: 1; opacity: 0.6; }
+.pendulum-left { transform-origin: 120px 70px; animation: swingLeft 2.6s ease-in-out infinite; }
+.pendulum-right { transform-origin: 280px 70px; animation: swingRight 2.6s ease-in-out infinite; }
 
-.electron { fill: var(--blue); }
-.e1 { offset-path: path('M 350 200 A 150 60 0 1 1 50 200 A 150 60 0 1 1 350 200'); animation: orbit1 9s linear infinite; }
-.e2 { offset-path: path('M 350 200 A 150 60 0 1 1 50 200 A 150 60 0 1 1 350 200'); animation: orbit2 11s linear infinite; }
-.e3 { offset-path: path('M 350 200 A 150 60 0 1 1 50 200 A 150 60 0 1 1 350 200'); animation: orbit3 13s linear infinite; }
+@keyframes swingLeft {
+  0%   { transform: rotate(0deg); }
+  22%  { transform: rotate(-30deg); }
+  50%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
 
-@keyframes orbit1 { from { offset-distance: 0%; } to { offset-distance: 100%; } }
-@keyframes orbit2 { from { offset-distance: 33%; } to { offset-distance: 133%; } }
-@keyframes orbit3 { from { offset-distance: 66%; } to { offset-distance: 166%; } }
+@keyframes swingRight {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(0deg); }
+  78%  { transform: rotate(30deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pendulum-left, .pendulum-right { animation: none; }
+}
 
 /* Sections */
 section {
@@ -240,10 +250,6 @@ section {
   font-size: 0.8rem;
   color: var(--slate);
   margin: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .electron { animation: none; }
 }
 
 @media (max-width: 860px) {

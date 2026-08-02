@@ -1,8 +1,10 @@
 ---
 layout: default
 ---
-<article class="about">
-  <p class="eyebrow">{{ page.tag }}</p>
-  <h2>{{ page.title }}</h2>
-  {{ content }}
-</article>
+<section class="about">
+  <p class="eyebrow"><a href="{{ '/resources.html' | relative_url }}">&larr; Resources</a> &middot; {{ page.tag }}</p>
+  <div class="about-grid">
+    <h2>{{ page.title }}</h2>
+    {{ content }}
+  </div>
+</section>
